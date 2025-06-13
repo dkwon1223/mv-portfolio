@@ -40,37 +40,40 @@ const Projects: FC = () => {
       <Container size="lg" py={20}>
         <Stack gap="xl">
           <div style={{ height: '10%' }}>
-            <Title order={2} ta="center" mb="md">
+            <Title order={3} ta="center" mb="md">
               Featured Projects
             </Title>
-            <Text ta="center" c="dimmed" size="lg" maw={600} mx="auto">
+            <Text ta="center" c="dimmed" size="md" maw={600} mx="auto">
               A showcase of recent work spanning web and backend development
             </Text>
           </div>
           <Carousel
             withIndicators
-            height={500}
-            slideSize="70%"
+            height={'90vh'}
+            slideSize="100%"
             slideGap="md"
+            style={{ paddingLeft: '1em' }}
             controlsOffset="xs"
             controlSize={40}
           >
             {portfolioProjects.map((item, index) => (
               <Carousel.Slide key={index}>
-                <Card shadow="md" radius="md" h="100%">
-                  <Card.Section>
+                <Card shadow="lg" radius="md" h="90%">
+                  <Card.Section
+                    style={{ padding: '2em', height: '80%' }}
+                  >
                     {item.video ?
-                      <video height={400} controls autoPlay src={item.video}></video>
+                      <video height={'100%'} controls autoPlay src={item.video}></video>
                       :
                       <Image
                         src={item.image}
-                        height={400}
+                        height={350}
                         alt={item.title}
                         fit="cover"
                       />
                     }
                   </Card.Section>
-                  <Stack gap="sm" p="md">
+                  <Stack gap="sm" p="md" style={{ height: '20%' }}>
                     <Title order={3} size="1.2rem">
                       {item.title}
                     </Title>
@@ -80,9 +83,6 @@ const Projects: FC = () => {
                     <Group>
                       <Button variant="light" color="#42B029" size="xs">
                         View Project
-                      </Button>
-                      <Button variant="subtle" color="#42B029" size="xs">
-                        Live Demo
                       </Button>
                     </Group>
                   </Stack>
