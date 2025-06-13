@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@mantine/carousel": "^8.1.0",
     "@mantine/core": "^8.1.0",
     "@mantine/hooks": "^8.1.0",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.6.2"
