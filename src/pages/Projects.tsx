@@ -1,37 +1,34 @@
 import { Carousel } from "@mantine/carousel";
 import { Button, Card, Container, Divider, Group, Image, Stack, Text, Title } from "@mantine/core";
 import type { FC } from "react";
-import DowngradeUI from "../assets/Screen Recording 2025-06-13 at 12.13.44 PM.mov";
+import DowngradeUIRecording from "../assets/downgrade-recording.mov";
+import DowngradeImage from "../assets/downgrade.png";
+import BiteSyncRecording from "../assets/bitesync-recording.mov";
+import BiteSyncImage from "../assets/bitesync.png";
 
 type PortfolioProject = {
   image: string;
   video?: string;
   title: string;
   description: string;
+  links: string[];
 }
 
 const Projects: FC = () => {
   const portfolioProjects: PortfolioProject[] = [
     {
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      video: DowngradeUI,
+      image: DowngradeImage,
+      video: DowngradeUIRecording,
       title: "Merchant Downgrade Flow",
       description: "A dynamic UI flow that informs Clover merchants about lost or altered SaaS features that result from a plan downgrade change.",
+      links: ["https://github.corp.clover.com/clover/web-app-ebb-portal/tree/main/src/pages/ServicePlan/PlanDowngradeModal"]
     },
     {
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      title: "E-commerce Platform",
-      description: "Full-stack application with payment integration",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
-      title: "Mobile App Design",
-      description: "UI/UX design for productivity mobile application",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
-      title: "Machine Learning Model",
-      description: "Predictive analytics solution for business intelligence",
+      image: BiteSyncImage,
+      video: BiteSyncRecording,
+      title: "BiteSync",
+      description: "Full-stack restaurant inventory management application",
+      links: ["https://github.com/dkwon1223/bitesync-client", "https://github.com/dkwon1223/bitesync-api"]
     },
   ];
 
@@ -40,37 +37,40 @@ const Projects: FC = () => {
       <Container size="lg" py={20}>
         <Stack gap="xl">
           <div style={{ height: '10%' }}>
-            <Title order={2} ta="center" mb="md">
+            <Title order={3} ta="center" mb="md">
               Featured Projects
             </Title>
-            <Text ta="center" c="dimmed" size="lg" maw={600} mx="auto">
+            <Text ta="center" c="dimmed" size="md" maw={600} mx="auto">
               A showcase of recent work spanning web and backend development
             </Text>
           </div>
           <Carousel
             withIndicators
-            height={500}
-            slideSize="70%"
+            height={'90vh'}
+            slideSize="100%"
             slideGap="md"
+            style={{ paddingLeft: '1em' }}
             controlsOffset="xs"
             controlSize={40}
           >
             {portfolioProjects.map((item, index) => (
               <Carousel.Slide key={index}>
-                <Card shadow="md" radius="md" h="100%">
-                  <Card.Section>
+                <Card shadow="lg" radius="md" h="90%">
+                  <Card.Section
+                    style={{ padding: '2em', height: '80%' }}
+                  >
                     {item.video ?
-                      <video height={400} controls autoPlay src={item.video}></video>
+                      <video height={'100%'} controls autoPlay src={item.video}></video>
                       :
                       <Image
                         src={item.image}
-                        height={400}
+                        height={350}
                         alt={item.title}
                         fit="cover"
                       />
                     }
                   </Card.Section>
-                  <Stack gap="sm" p="md">
+                  <Stack gap="sm" p="md" style={{ height: '20%' }}>
                     <Title order={3} size="1.2rem">
                       {item.title}
                     </Title>
@@ -78,12 +78,15 @@ const Projects: FC = () => {
                       {item.description}
                     </Text>
                     <Group>
-                      <Button variant="light" color="#42B029" size="xs">
-                        View Project
-                      </Button>
-                      <Button variant="subtle" color="#42B029" size="xs">
-                        Live Demo
-                      </Button>
+                      {item.links.map((link, index) => {
+                        return (
+                          <Button variant="light" color="#42B029" size="sm" onClick={() => {
+                            window.open(link, '_blank', 'noopener,noreferrer');
+                          }}>
+                            {`View Repository ${index + 1}`}
+                          </Button>
+                        )
+                      })}
                     </Group>
                   </Stack>
                 </Card>

@@ -1,7 +1,7 @@
 import { ArchiveBoxIcon, FolderIcon, HomeIcon } from "@heroicons/react/16/solid";
 import { AppShell, AppShellHeader, AppShellMain, AppShellNavbar, Burger, NavLink, Title } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router";
 
 const navLinkData = [
@@ -22,6 +22,14 @@ const RootLayout = () => {
   const [opened, { toggle }] = useDisclosure();
   const [activeNav, setActiveNav] = useState<number>(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    navLinkData.forEach((link, index) => {
+      if (location.pathname.includes(link.path)) {
+        setActiveNav(index);
+      }
+    })
+  })
 
   return (
     <AppShell
@@ -55,14 +63,15 @@ const RootLayout = () => {
           return (
             <NavLink 
               key={item.label}
-              active={index === activeNav}
+              active={index === activeNav ? true : false}
               label={item.label}
               leftSection={item.icon}
               color="#42B029"
               description={item.description}
-              onClick={() => {
-                setActiveNav(index);
+              onClick={(e: any) => {
+                e.preventDefault();
                 navigate(item.path);
+                setActiveNav(index);
               }}
             />
           )

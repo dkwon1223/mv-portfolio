@@ -15,6 +15,7 @@ import {
   ThemeIcon,
   Paper,
   Badge,
+  Card,
 } from "@mantine/core";
 import {
   BriefcaseIcon,
@@ -22,8 +23,10 @@ import {
   FolderArrowDownIcon,
 } from "@heroicons/react/16/solid";
 import CloverGroupPhoto from "../assets/clover-saintp.jpg";
+import CloverGroupPhoto2 from "../assets/clover-hike.jpg";
 import GithubIcon from "../assets/icons/github-icon.svg";
 import LinkedinIcon from "../assets/icons/linkedin-icon.svg";
+import { Carousel } from "@mantine/carousel";
 
 type TimelineItem = {
   title: string;
@@ -32,6 +35,11 @@ type TimelineItem = {
   metric: string;
   technologies: string[];
 };
+
+const coverPhotos = [
+  CloverGroupPhoto,
+  CloverGroupPhoto2
+]
 
 const Overview: FC = () => {
   const timelineItems: TimelineItem[] = [
@@ -42,15 +50,34 @@ const Overview: FC = () => {
         "Dedicated full-time schedule to learning programming fundamentals across frontend and backend stacks related to Clover and my specific team(Billing).",
       metric:
         "Completed all assignments/projects receiving 'exceeded expectations' assessment from instructor and manager.",
-      technologies: ["JavaScript", "Express.js", "Jest", "Java", "Object Oriented Programming", "SQL", "Sequelize", "SQLite"]
+      technologies: [
+        "JavaScript",
+        "Express.js",
+        "Jest",
+        "Java",
+        "Object Oriented Programming",
+        "SQL",
+        "Sequelize",
+        "SQLite",
+      ],
     },
     {
       title: "Apprentice Billing Engineer",
       duration: "01/2025 - Present",
       description:
         "Contributed to various projects and tasks involved with Clover Billing including backend development of microservices and frontend development of web applications.",
-      metric: "Developed 10+ UI features and pages across internal billing operations admin tools and client facing merchant dashboards. Contributed to developement, bug fixes, and testing of 4 critical microservices involved with Clover's event based billing architecture.",
-      technologies: ["React", "TypeScript", "Material UI", "Java", "Spring Boot", "Docker", "JUnit", "Android Development"]
+      metric:
+        "Developed 10+ UI features and pages across internal billing operations admin tools and client facing merchant dashboards. Contributed to developement, bug fixes, and testing of 4 critical microservices involved with Clover's event based billing architecture.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Material UI",
+        "Java",
+        "Spring Boot",
+        "Docker",
+        "JUnit",
+        "Android Development",
+      ],
     },
   ];
 
@@ -126,14 +153,34 @@ const Overview: FC = () => {
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 6 }}>
             <Center h="100%">
-              <Image
-                src={CloverGroupPhoto}
-                alt="Clover office photo"
-                radius="20%"
-                w={"100%"}
-                h={"26em"}
-                fit="cover"
-              />
+              <Carousel
+                withIndicators
+                height={"100%"}
+                slideSize="100%"
+                slideGap="md"
+                style={{ paddingLeft: "1em" }}
+                controlsOffset="xs"
+                controlSize={40}
+              >
+                {coverPhotos.map((photo) => {
+                  return (
+                    <Carousel.Slide>
+                      <Card shadow="lg" radius="md" h="100%">
+                        <Card.Section style={{ padding: "2em", height: "80%" }}>
+                          <Image
+                            src={photo}
+                            alt="Clover office photo"
+                            radius="20%"
+                            w={"100%"}
+                            h={"26em"}
+                            fit="cover"
+                          />
+                        </Card.Section>
+                      </Card>
+                    </Carousel.Slide>
+                  )
+                })}
+              </Carousel>
             </Center>
           </Grid.Col>
         </Grid>
@@ -175,9 +222,9 @@ const Overview: FC = () => {
                     <Group gap="xs">
                       {item.technologies.map((tech) => {
                         return (
-                        <Badge size="xs" variant="outline">
-                          {tech}
-                        </Badge>
+                          <Badge size="xs" variant="outline">
+                            {tech}
+                          </Badge>
                         );
                       })}
                     </Group>
