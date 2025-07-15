@@ -26,6 +26,7 @@ import CloverGroupPhoto from "../assets/clover-saintp.jpg";
 import CloverGroupPhoto2 from "../assets/clover-hike.jpg";
 import GithubIcon from "../assets/icons/github-icon.svg";
 import LinkedinIcon from "../assets/icons/linkedin-icon.svg";
+import Resume from "../assets/David_Kwon_Resume.pdf";
 import { Carousel } from "@mantine/carousel";
 
 type TimelineItem = {
@@ -116,12 +117,15 @@ const Overview: FC = () => {
                   color="#42B029"
                   leftSection={<FolderArrowDownIcon height={"1em"} />}
                 >
-                  Download Resume
+                  <a href={Resume} target="_blank" download="David_Kwon_Resume" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    Download Resume
+                  </a>
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   color="#42B029"
+                  onClick={() => { window.location.href = 'mailto:dkwon1223@gmail.com' }}
                   leftSection={<EnvelopeIcon height={"1em"} />}
                 >
                   Get In Touch
@@ -132,16 +136,18 @@ const Overview: FC = () => {
                   variant="subtle"
                   color="#42B029"
                   size="sm"
+                  onClick={() => window.open("https://github.com/dkwon1223", "_blank")}
                   leftSection={
                     <Image style={{ height: "2em" }} src={GithubIcon} />
                   }
-                >
+                  >
                   GitHub
                 </Button>
                 <Button
                   variant="subtle"
                   size="sm"
                   color="#42B029"
+                  onClick={() => window.open("https://www.linkedin.com/in/david-kwon-4b7449231/", "_blank")}
                   leftSection={
                     <Image style={{ height: "2em" }} src={LinkedinIcon} />
                   }
@@ -190,7 +196,7 @@ const Overview: FC = () => {
         <Stack gap="xl">
           <Box ta="center">
             <Title order={1} mb="md">
-              My Professional Journey
+              My Professional Journey at Clover
             </Title>
             <Text c="dimmed" size="lg" maw={600} mx="auto">
               A timeline of my career progression, key achievements, and
