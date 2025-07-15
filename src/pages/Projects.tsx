@@ -5,6 +5,8 @@ import DowngradeUIRecording from "../assets/downgrade-recording.mov";
 import DowngradeImage from "../assets/downgrade.png";
 import BiteSyncRecording from "../assets/bitesync-recording.mov";
 import BiteSyncImage from "../assets/bitesync.png";
+import CEImage from "../assets/ce.png";
+import CERecording from "../assets/ce-recording.mov";
 
 type PortfolioProject = {
   image: string;
@@ -30,6 +32,13 @@ const Projects: FC = () => {
       description: "Full-stack restaurant inventory management application",
       links: ["https://github.com/dkwon1223/bitesync-client", "https://github.com/dkwon1223/bitesync-api"]
     },
+    {
+      image: CEImage,
+      video: CERecording,
+      title: "Clover Cost Estimator",
+      description: "Application that allows Clover merchants to preview estimated costs for different combinations of SaaS and device offerings",
+      links: ["https://github.com/david-kwon-clover/clover-ce-client"]
+    }
   ];
 
   return (

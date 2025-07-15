@@ -7,7 +7,7 @@ import { Outlet, useNavigate } from "react-router";
 const navLinkData = [
   { icon: <HomeIcon height={'1em'} width={'1em'} />, 
     label: 'Home', 
-    path: '/overview',
+    path: '/',
     description: 'My apprenticeship overview' 
   },
   {
