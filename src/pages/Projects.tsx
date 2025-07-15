@@ -7,6 +7,8 @@ import BiteSyncRecording from "../assets/bitesync-recording.mov";
 import BiteSyncImage from "../assets/bitesync.png";
 import CEImage from "../assets/ce.png";
 import CERecording from "../assets/ce-recording.mov";
+import VaultryImage from "../assets/vaultry.png";
+import VaultryRecording from "../assets/vaultry_recording.mov";
 
 type PortfolioProject = {
   image: string;
@@ -38,7 +40,14 @@ const Projects: FC = () => {
       title: "Clover Cost Estimator",
       description: "Application that allows Clover merchants to preview estimated costs for different combinations of SaaS and device offerings",
       links: ["https://github.com/david-kwon-clover/clover-ce-client"]
-    }
+    },
+    {
+      image: VaultryImage,
+      video: VaultryRecording,
+      title: "Vaultry",
+      description: "Full-stack e-commerce application where users can browse items and create orders",
+      links: ["https://github.com/MV-SWE-Fiserv-US/group-full-stack-inventory-project-cos"]
+    },
   ];
 
   return (
