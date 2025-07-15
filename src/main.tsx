@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         Component: Overview, 
       },
       {
-        path: "/projects",
+        path: "projects",
         Component: Projects
       }
     ],
