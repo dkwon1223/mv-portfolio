@@ -1,54 +1,129 @@
-# React + TypeScript + Vite
+# Clover Apprenticeship Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional portfolio website showcasing my journey as a Full Stack Billing Engineer at Clover, built with modern React and TypeScript technologies.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[View Portfolio](your-deployment-url-here)
 
-## Expanding the ESLint configuration
+## 📋 Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This portfolio documents my professional growth during my apprenticeship at Clover, featuring a timeline of achievements, key projects, and technical skills developed while working on critical billing infrastructure and merchant-facing applications.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ✨ Features
+
+- **Interactive Timeline**: Professional journey with achievements and metrics
+- **Project Showcase**: Carousel-based gallery with video demonstrations
+- **Responsive Design**: Mobile-first approach with Mantine UI components
+- **Modern Architecture**: TypeScript, React Router, and component-based structure
+- **Professional Presentation**: Clean, recruiter-friendly interface
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- React 19 with TypeScript
+- Mantine UI component library
+- React Router for navigation
+- Embla Carousel for interactive galleries
+
+**Development Tools**
+- Vite for fast development and building
+- ESLint with TypeScript configuration
+- PostCSS with Mantine preset
+
+**Key Dependencies**
+- `@mantine/core` - Modern React components
+- `@mantine/carousel` - Interactive project gallery
+- `@heroicons/react` - Professional iconography
+- `react-router` - Client-side routing
+
+## 🏗️ Project Structure
+
+```
+src/
+├── pages/           # Main application pages
+│   ├── Overview.tsx    # Professional timeline & intro
+│   ├── Projects.tsx    # Project showcase gallery
+│   └── RootLayout.tsx  # App shell with navigation
+├── assets/          # Images, videos, and documents
+│   └── icons/         # SVG icon components
+└── main.tsx         # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Quick Start
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clone the repository**
+   ```bash
+   git clone [repository-url]
+   cd mv-portfolio
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## 📱 Features Breakdown
+
+### Professional Timeline
+- Interactive timeline showcasing career progression
+- Metrics and achievements for each role
+- Technology badges for skills demonstration
+- Professional duration tracking
+
+### Project Gallery
+- Video demonstrations of live applications
+- Multi-repository project linking
+- Responsive carousel interface
+- Detailed project descriptions
+
+### Navigation & UX
+- Clean, professional app shell design
+- Mobile-responsive navigation
+- Smooth transitions and interactions
+- Accessibility-focused implementation
+
+## 🎯 Key Achievements Highlighted
+
+- **Full-Stack Development**: React, TypeScript, Java, Spring Boot
+- **UI/UX Implementation**: 10+ features across admin tools and merchant dashboards
+- **Backend Services**: Contributed to 4 critical microservices in event-based billing architecture
+- **Professional Growth**: Exceeded expectations in apprenticeship assessments
+
+## 📄 Professional Documents
+
+- Resume download functionality
+- Direct contact integration
+- LinkedIn and GitHub profile linking
+- Professional presentation format
+
+## 🔧 Development Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Production build
+npm run lint     # ESLint code checking
+npm run preview  # Preview production build
 ```
+
+## 📞 Contact
+
+**David Kwon**  
+Full Stack Billing Engineer  
+📧 [dkwon1223@gmail.com](mailto:dkwon1223@gmail.com)  
+💼 [LinkedIn](https://www.linkedin.com/in/david-kwon-4b7449231/)  
+🐙 [GitHub](https://github.com/dkwon1223)
+
+---
+
+*Built with React, TypeScript, and Mantine UI | Deployed with modern CI/CD practices*
