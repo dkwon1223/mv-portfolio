@@ -45,7 +45,7 @@ const coverPhotos = [
 const Overview: FC = () => {
   const timelineItems: TimelineItem[] = [
     {
-      title: "Multiverse Student",
+      title: "Multiverse Student / Apprentice Billing Engineer",
       duration: "09/2024 - 12/2024",
       description:
         "Dedicated full-time schedule to learning programming fundamentals across frontend and backend stacks related to Clover and my specific team(Billing).",
@@ -63,7 +63,7 @@ const Overview: FC = () => {
       ],
     },
     {
-      title: "Apprentice Billing Engineer",
+      title: "Junior Full Stack Billing Engineer",
       duration: "01/2025 - Present",
       description:
         "Contributed to various projects and tasks involved with Clover Billing including backend development of microservices and frontend development of web applications.",
