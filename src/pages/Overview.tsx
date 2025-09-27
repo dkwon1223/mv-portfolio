@@ -45,7 +45,7 @@ const coverPhotos = [
 const Overview: FC = () => {
   const timelineItems: TimelineItem[] = [
     {
-      title: "Fart Student / Apprentice Billing Engineer",
+      title: "Apprentice Billing Engineer",
       duration: "09/2024 - 12/2024",
       description:
         "Dedicated full-time schedule to learning programming fundamentals across frontend and backend stacks related to Clover and my specific team(Billing).",
