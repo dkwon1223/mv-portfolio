@@ -96,9 +96,9 @@ const Overview: FC = () => {
                   mb="md"
                   style={{ textWrap: "pretty" }}
                 >
-                  My{" "}
+                  My time at{" "}
                   <Text component="span" c="#42B029" inherit>
-                    Clover Apprenticeship
+                    Clover
                   </Text>
                 </Title>
                 <Title order={2} size="1.5rem" fw={400} c="dimmed" mb="xl">
